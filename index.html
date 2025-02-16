@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPL Technologies - Courses</title>
+  <style>
+    /* General Reset */
+    body, h1, h2, h3, p, ul, li, input, textarea, button {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #333;
+    }
+
+    /* Header Section */
+    header {
+      background-color: rgba(42, 42, 42, 0.9);
+      color: white;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header .logo img {
+      height: 50px;
+    }
+
+    header nav ul {
+      display: flex;
+      list-style-type: none;
+    }
+
+    header nav ul li {
+      margin: 0 15px;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    header nav ul li a:hover {
+      color: #4CAF50;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://static.vecteezy.com/system/resources/thumbnails/011/635/825/small_2x/abstract-square-interface-modern-background-concept-fingerprint-digital-scanning-visual-security-system-authentication-login-vector.jpg');
+      background-size: cover;
+      color: white;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin: 20px 0;
+    }
+
+    .hero button {
+      padding: 10px 25px;
+      background-color: #4CAF50;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      color: white;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .hero button:hover {
+      background-color: #45a049;
+    }
+
+    /* Course Section */
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      margin-top: 20px;
+    }
+
+    .course-card {
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .course-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .course-card h3 {
+      margin: 15px 0;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .course-card p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .course-card button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .course-card:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-5px);
+    }
+
+    .course-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .course-card button:hover {
+      background-color: #45a049;
+    }
+
+    /* About Us Section */
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      font-size: 18px;
+      line-height: 1.5;
+      color: #666;
+    }
+
+    /* Contact Form */
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .contact-form button {
+      padding: 12px 30px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .contact-form button:hover {
+      background-color: #45a049;
+    }
+
+    /* Footer */
+    footer {
+      background-color: rgba(42, 42, 42, 0.9);
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    footer p {
+      font-size: 14px;
+    }
+
+    /* Social Media Icons */
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #4CAF50;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="logo">
+      <img src="https://content.jdmagicbox.com/comp/madurai/l3/0452px452.x452.160416145926.s1l3/catalogue/ipl-technologies-koodal-nagar-madurai-computer-training-institutes-r37vg.jpg" alt="IPL Technologies Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#login">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h1>Unlock Your Potential with IPL Technologies</h1>
+    <p>Choose from a variety of courses to boost your career</p>
+    <button onclick="scrollToCourses()">Explore Courses</button>
+  </section>
+
+  <!-- Courses Section -->
+  <section id="courses">
+    <h2>Our Courses</h2>
+    <div class="course-grid">
+      <!-- Java Course -->
+      <div class="course-card">
+        <img src="https://t4.ftcdn.net/jpg/02/92/83/57/360_F_292835773_oImixQGFKLpOPnjfsbesHyqdjOk5hsxL.jpg" alt="Java Course Image">
+        <h3>Java</h3>
+        <p>Learn Java programming and build powerful applications.</p>
+        <button onclick="window.location.href='#java'">Learn More</button>
+      </div>
+
+<div class="course-card">
+        <img src="https://code.visualstudio.com/assets/docs/languages/cpp/msg-intellisense.png" alt="C & C++ Course Image">
+        <h3>C & C++</h3>
+        <p>Master C and C++ programming languages and develop efficient software solutions.</p>
+        <button onclick="window.location.href='#c-c++'">Learn More</button>
+      </div>
+
+      <!-- Python Course -->
+      <div class="course-card">
+        <img src="https://www.deepseadev.com/wp-content/uploads/2024/06/uses-of-python.jpg" alt="Python Course Image">
+        <h3>Python</h3>
+        <p>Learn Python and explore its applications in data science, machine learning, and automation.</p>
+        <button onclick="window.location.href='#python'">Learn More</button>
+      </div>
+
+      <!-- SQL Course -->
+      <div class="course-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS1PsaCTCoWVwDwZBJIkmxnn4sk7-DnQc4MQ&s" alt="SQL Course Image">
+        <h3>SQL</h3>
+        <p>Learn SQL to manage and manipulate databases efficiently. This course will teach you how to query, update, and manage databases with ease.</p>
+        <button onclick="window.location.href='#sql'">Learn More</button>
+      </div>
+
+      <!-- Tally Prime Course -->
+      <div class="course-card">
+        <img src="https://www.indiancomputer.co.in/wp-content/uploads/2021/03/accounting-image.jpg" alt="Tally Prime Course Image">
+        <h3>Tally Prime</h3>
+        <p>Master Tally Prime for accounting, finance management, and business automation.</p>
+        <button onclick="window.location.href='#tally-prime'">Learn More</button>
+      </div>
+
+      <!-- DCA Course -->
+      <div class="course-card">
+        <img src="https://www.eciassam.com/assets/images/study/dca.jpg" alt="DCA Course Image">
+        <h3>DCA (Diploma in Computer Applications)</h3>
+        <p>Learn essential computer applications and office software tools with the DCA course.</p>
+        <button onclick="window.location.href='#dca'">Learn More</button>
+      </div>
+
+      <!-- Shorthand Course -->
+      <div class="course-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIQwVvGLMi7EJ-wWo9X0nPjJHqno9_bj-kNQ&s" alt="Shorthand Course Image">
+        <h3>Shorthand</h3>
+        <p>Master shorthand typing for fast and efficient writing.</p>
+        <button onclick="window.location.href='#shorthand'">Learn More</button>
+      </div>
+
+      <!-- Abacus Course -->
+      <div class="course-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmEyQvlJ_pdfd9ytBRyS1vR-F2WCa6riZZ_Q&s" alt="Abacus Course Image">
+        <h3>Abacus</h3>
+        <p>Enhance mental calculation skills and improve concentration with the Abacus method.</p>
+        <button onclick="window.location.href='#abacus'">Learn More</button>
+      </div>
+
+      <!-- Full Stack Development Course -->
+      <div class="course-card">
+        <img src="https://miro.medium.com/v2/resize:fit:800/0*XH3rLskyOsCqVV-j.jpg" alt="Full Stack Development Course Image">
+        <h3>Full Stack Development</h3>
+        <p>Learn both front-end and back-end technologies to become a full-stack developer.</p>
+        <button onclick="window.location.href='#full-stack'">Learn More</button>
+      </div>
+
+      <!-- Data Science Course -->
+      <div class="course-card">
+        <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/how_to_become_a_data_scientist.jpg" alt="Data Science Course Image">
+        <h3>Data Science</h3>
+        <p>Learn data science techniques and tools to analyze and interpret complex data.</p>
+        <button onclick="window.location.href='#data-science'">Learn More</button>
+      </div>
+
+      <!-- Chess Course -->
+      <div class="course-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Chess_pieces_close_up.jpg/640px-Chess_pieces_close_up.jpg" alt="Chess Course Image">
+        <h3>Chess</h3>
+        <p>Enhance your strategic thinking and learn the fundamentals of chess through this course.</p>
+        <button onclick="window.location.href='#chess'">Learn More</button>
+      </div>
+
+      <!-- Digital Marketing Course -->
+      <div class="course-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYPPzI91w2cal-F4BN-6F2akQCvqlmQMcuDA&s" alt="Digital Marketing Course Image">
+        <h3>Digital Marketing</h3>
+        <p>Learn strategies for digital marketing, social media optimization, and online advertising.</p>
+        <button onclick="window.location.href='#digital-marketing'">Learn More</button>
+      </div>
+
+      <!-- MS Office Course -->
+      <div class="course-card">
+        <img src="https://cdn.investintech.com/wp-content/uploads/2021/07/A-Beginners-Guide-to-Microsoft-Office.jpg" alt="MS Office Course Image">
+        <h3>MS Office</h3>
+        <p>Learn to use MS Office applications like Word, Excel, PowerPoint, and Outlook efficiently.</p>
+        <button onclick="window.location.href='#ms-office'">Learn More</button>
+      </div>
+
+      <!-- Other Course Cards (Similar structure as Java Course) -->
+
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="section">
+    <h2>About Us</h2>
+    <p>IPL Technologies is a leading educational institution focused on providing comprehensive IT training. We offer a variety of courses to enhance your career in the tech industry.</p>
+  </section>
+
+  <!-- Contact Us Section -->
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <div class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </div>
+  </section>
+
+  <!-- Login Section -->
+  <section id="login" class="section">
+    <h2>Login</h2>
+    <div class="contact-form">
+      <input type="email" placeholder="Email Address" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2025 IPL Technologies. All Rights Reserved.</p>
+    <div class="social-icons">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script>
+    // JavaScript Functions
+    function scrollToCourses() {
+      document.getElementById('courses').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
